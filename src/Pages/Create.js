@@ -21,22 +21,7 @@ const Create = ({ onAddPost }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-  }
-
-  const handleContentChange = (event) => {
-    setContent(event.target.value);
-  }
-
-  const handlePost = () => {
-    if (typeof onAddPost === 'function') {
-      onAddPost({ title, content });
-    }
-    setTitle('');
-    setContent('');
-  }
-
+  
   return (
     <PostContainer>
         <h3>Create your blog</h3>
@@ -54,11 +39,11 @@ const Create = ({ onAddPost }) => {
                 outline: 'none' 
             }}
             value={content}
-            onChange={handleContentChange}
+            
           >
           </textarea>
           <br/>
-          <Button variant="contained" onClick={handlePost}>Post</Button>
+          <Button variant="contained" >Post</Button>
       </PostContainer>
   )
 }
